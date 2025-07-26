@@ -1,69 +1,108 @@
-# React + TypeScript + Vite
+# ✅ TaskRios — App de Tareas con TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación sencilla de tareas (To-Do List) desarrollada desde cero con **React + TypeScript**, usando buenas prácticas, tipado estricto, estado global con `useReducer`, filtros, edición en línea, y persistencia simulada con servicios fake (como JSONBin).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías usadas
 
-## Expanding the ESLint configuration
+- ⚛️ React
+- 🟦 TypeScript
+- 🪄 @formkit/auto-animate
+- 🧠 useReducer + useEffect
+- 🎨 CSS puro / Tailwind (opcional)
+- 🌐 JSONBin como servidor simulado (mock API)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧩 Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Agregar tareas nuevas
+- Editar el título (doble clic)
+- Marcar como completada
+- Eliminar tareas
+- Filtrar por: todas / activas / completadas
+- Eliminar todas las completadas
+- Persistencia de tareas simulada (servicio remoto)
+- Animaciones suaves con auto-animate
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Estructura del proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
+├── components/
+│ ├── Todo.tsx
+│ ├── Todos.tsx
+│ └── Footer.tsx
+├── services/
+│ └── todos.ts
+├── const/
+│ └── index.ts
+├── Types/
+│ └── index.ts
+└── hooks/
+└── useTodos.ts
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+---
+
+## 📦 Instalación y uso
+
+```bash
+# Clona el repositorio
+git clone https://github.com/tuusuario/taskrios.git
+
+# Entra al proyecto
+cd taskrios
+
+# Instala dependencias
+npm install
+
+# Corre en modo desarrollo
+npm run dev
+
+📝 Ejemplo de uso
+
+import { Todos } from './components/Todos'
+import { useTodos } from './hooks/useTodos'
+
+const App = () => {
+  const {
+    todos,
+    activeCount,
+    completedCount,
+    filterSelected,
+    handleCompleted,
+    handleClearCompleted,
+    handleFilterChange,
+    handleRemove,
+    handleSave,
+    handleUpdateTitle
+  } = useTodos()
+
+  return (
+    <div className="app">
+      <Todos
+        todos={todos}
+        setCompleted={handleCompleted}
+        setTitle={handleUpdateTitle}
+        removeTodo={handleRemove}
+      />
+    </div>
+  )
+}
+
+👨‍💻 Autor
+
+    🧑 Santy (@Santy401)
+
+📜 Licencia
+
+MIT © 2025 - Santy Castellar
+
+
+---
+
+¿Querés que también te lo traduzca al inglés para que se vea más pro en GitHub? ¿O lo dejamos solo en español por ahora?
+
