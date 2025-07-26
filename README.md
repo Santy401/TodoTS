@@ -9,23 +9,6 @@
 - 💾 Persistencia simulada
 - 🎬 Animaciones fluidas
 - 📱 Totalmente responsive
-
-### Structure | Estructura
-`
-src/
-├── components/       
-│   ├── Todo.tsx     
-│   ├── Todos.tsx    
-│   └── Footer.tsx   
-├── context/         
-│   └── TodoContext.tsx
-├── hooks/           
-│   └── useTodos.ts
-├── types/           
-│   └── index.ts
-└── services/        
-    └── todos.ts
-`
 --- 
 ### 🤝 Contributing | Contribuciones
 
