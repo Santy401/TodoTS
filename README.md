@@ -11,6 +11,7 @@
 - 📱 Totalmente responsive
 
 ### Structure | Estructura
+`
 src/
 ├── components/       
 │   ├── Todo.tsx     
@@ -23,7 +24,8 @@ src/
 ├── types/           
 │   └── index.ts
 └── services/        
-    └── todos.ts5
+    └── todos.ts
+`
 --- 
 ### 🤝 Contributing | Contribuciones
 
